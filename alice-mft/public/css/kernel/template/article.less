@@ -1,0 +1,31 @@
+@import "../configuration";
+
+@import "../section/header";
+@import "../section/footer";
+@import "../section/article/menu";
+
+@import "../../assets/scroller";
+
+div#container.article {
+    & > section#main {
+        & > section#area {
+            min-height: calc(100vh - @header-bottom-height - 8rem);
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 4rem 3rem;
+
+            & > nav#menu {
+                margin-right: 4rem;
+            }
+
+            & > div#contents {
+                width: calc(70% - @menu-width - 4rem);
+                height: 100%;
+                background: #FFF;
+                box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.4);
+                padding: 2rem 1rem;
+            }
+        }
+    }
+}

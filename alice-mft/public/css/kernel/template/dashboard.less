@@ -1,0 +1,35 @@
+@import "../configuration";
+
+@import "../section/top-header";
+@import "../section/header";
+@import "../section/footer";
+
+@import "../section/dashboard/navigation";
+@import "../section/dashboard/options";
+
+div#container.dashboard {
+    &.expanded section#main {
+        width: 100%;
+        margin-left: 0;
+        transition: all 0.4s ease-in-out;
+    }
+
+    & > section#main {
+        @media screen and (max-width: 640px) {
+            & {
+                width: 100%;
+                margin-left: 0;
+            }
+        }
+
+        margin-top: @header-top-height;
+        margin-left: @nav-side-width;
+        width: calc(100% - @nav-side-width);
+        transition: all 0.4s ease-in-out;
+
+        & > section#area {
+            min-height: calc(100vh - @header-bottom-height - @header-top-height);
+            padding: 2rem;
+        }
+    }
+}

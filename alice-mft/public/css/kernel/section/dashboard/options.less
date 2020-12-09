@@ -1,0 +1,27 @@
+@import "../../configuration";
+
+div#container {
+	&.options nav#options {
+		right: 0;
+		transition: all 0.4s ease-in-out;
+	}
+
+	nav#options {
+        z-index: 999;
+		position: fixed;
+		width: @nav-options-width;
+		height: calc(100% - @header-top-height - 0.1em);
+		bottom: 0;
+		right: -@nav-options-width;
+		background: @color-black;
+		color: #fff;
+		transition: all 0.4s ease-in-out;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+        p {
+            font-size: 0.8rem;
+        }
+	}
+}

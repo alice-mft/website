@@ -1,0 +1,110 @@
+.dataTables_wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+
+	& > .dataTables_length {
+		height: 2em;
+		position: absolute;
+		display: flex;
+		align-items: center;
+
+		& label {
+			color: #222;
+			font-size: 0.8em;
+		}
+
+		& select {
+            background: transparent;
+            margin: 0 0.2rem;
+			height: 1.2rem;
+			box-shadow: 0 0 0.15em rgba(24, 24, 24, 0.4);
+		}
+	}
+
+	& > .dataTables_filter {
+		height: 2em;
+		align-self: flex-end;
+		display: flex;
+		align-items: center;
+		margin-bottom: 0.4em;
+
+		label {
+			color: #222;
+			font-size: 0.8em;
+		}
+
+		input {
+            background: transparent;
+			box-shadow: 0 0 0.15em rgba(24, 24, 24, 0.4);
+			margin-left: 0.2rem;
+			height: 1.2rem;
+			padding: 0 0.3em;
+		}
+	}
+
+	& > .dataTables_info {
+		height: 2rem;
+		position: absolute;
+		align-self: center;
+		display: flex;
+		align-items: center;
+		color: #222;
+		font-size: 0.8em;
+	}
+
+	& > .dataTables_paginate {
+		margin-top: 0.5em;
+		color: #222;
+		font-size: 0.8em;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: flex-end;
+
+		& > a {
+			cursor: pointer;
+			background: #222;
+			border: 0.1em #222 solid;
+			color: #fff;
+			transition: all 0.2s;
+			font-size: 0.8em;
+			display: flex;
+			align-items: center;
+			padding: 0 0.5em;
+			height: 1.2rem;
+			&:hover {
+				background: transparent;
+				color: #222;
+				transition: all 0.2s;
+			}
+		}
+
+		span {
+			margin: 0 1em;
+			display: flex;
+			align-items: center;
+			& > a {
+				cursor: pointer;
+				background: #222;
+				border: 0.1em #222 solid;
+				color: #fff;
+				transition: all 0.2s;
+				&:hover {
+					background: transparent;
+					color: #222;
+					transition: all 0.2s;
+				}
+			}
+			& > * {
+				font-size: 0.8em;
+				margin: 0 0.3em;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				height: 1.2rem;
+				width: 1.2rem;
+			}
+		}
+	}
+}

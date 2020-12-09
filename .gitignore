@@ -1,4 +1,11 @@
+# PhpStorm
+.DS_Store
+.idea
+
+# Laravel
 /vendor/
+composer.phar
+composer.lock
 node_modules/
 npm-debug.log
 yarn-error.log

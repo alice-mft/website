@@ -1,0 +1,27 @@
+@import "../configuration";
+
+footer#footer {
+    @media screen and (max-width: 640px) {
+        & {
+            padding: 0 1em;
+        }
+    }
+
+    z-index: 999;
+    color: #fff;
+    background: @footer-color;
+    height: @footer-height;
+    display: flex;
+    align-items: center;
+    padding: 0 4em;
+    justify-content: space-between;
+
+    & > p {
+        font-size: 0.8rem;
+        text-align: center;
+
+        & > strong {
+            color: @color-yellow;
+        }
+    }
+}

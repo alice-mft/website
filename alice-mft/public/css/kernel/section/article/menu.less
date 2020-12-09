@@ -1,0 +1,66 @@
+@import "../../configuration";
+
+nav#menu {
+    background: #FFF;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.4);
+    padding: 2rem 0;
+    width: @menu-width;
+
+    img {
+        width: calc(100% - 4rem);
+        padding: 0 2rem;
+        margin-bottom: 2rem;
+    }
+
+    div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+
+        a {
+            padding-left: 2rem;
+            color: #000;
+            line-height: 2.5rem;
+            width: calc(100% - 0.2rem - 2rem);
+            border-right: 0.2rem #FFF solid;
+
+            &:hover {
+                border-right: 0.2rem #FFCD00 solid;
+                background: #EEE;
+                transition: all 0.2s;
+            }
+
+            &.special {
+                border-right: 0;
+                margin-top: 1rem;
+                color: #FFF;
+                height: 2rem;
+                line-height: 2rem;
+                font-size: 0.95em;
+                box-shadow: 0 0 2em 0 rgba(0, 0, 0, 0.2);
+                padding-left: calc(@nav-body-padding-left);
+                width: calc(100% - @nav-body-padding-left);
+                background: @color-dark-gray;
+                transition: all 0.2s;
+
+                &:hover {
+                    padding-left: calc(@nav-body-padding-left + 0.5rem);
+                    width: calc(100% - @nav-body-padding-left - 0.5rem);
+                    transition: all 0.2s;
+                }
+
+                &.back {
+                    &::before {
+                        width: 1.2rem;
+                        text-align: center;
+                        margin-right: 0.5rem;
+                        content: "\f060";
+                    }
+                    background: #E74C3C;
+                }
+            }
+        }
+    }
+}

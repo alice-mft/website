@@ -1,0 +1,223 @@
+@import "../configuration";
+
+header#header {
+    z-index: 999;
+    background: @header-color;
+    color: #fff;
+    height: @header-bottom-height;
+    width: calc( 100% - 8em);
+    display: flex;
+    padding: 0 4em;
+    justify-content: space-between;
+    align-items: center;
+
+    @media screen and (max-width: 640px) {
+        & {
+            padding: 0 1em;
+            width: calc( 100% - 2em);
+        }
+    }
+
+    div {
+        display: flex;
+        align-items: center;
+
+        img {
+            height: 1.6rem;
+            margin-right: 0.5rem;
+        }
+
+        a {
+            color: #fff;
+        }
+
+        a.text {
+            font-size: 1.2rem;
+        }
+
+        &.profile {
+            display: flex;
+            justify-content: center;
+
+            & > a {
+                user-select: none;
+                cursor: pointer;
+                color: #fff;
+                font-size: 0.9rem;
+                display: flex;
+                align-items: center;
+                transition: all 0.2s ease-in-out;
+
+                &::before {
+                    content: "\f2bd";
+                    font-size: 1.2rem;
+                    margin-right: 0.3rem;
+                }
+
+                &:hover {
+                    color: #ffcd00;
+                    transition: all 0.2s ease-in-out;
+                }
+            }
+
+            &.developed div.dropdown {
+                display: flex;
+            }
+
+            div.dropdown {
+                display: none;
+                right: 2rem;
+                width: 13rem;
+                height: 20rem;
+                margin-top: calc(3rem + 20rem);
+                position: absolute;
+
+                div.content {
+                    box-shadow: 0 0 0.15em rgba(24, 24, 24, 0.4);
+                    background: #fff;
+                    margin-top: 1rem;
+                    height: calc(100% - 1rem);
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    color: #222;
+
+                    div.picture {
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        flex-direction: column;
+
+                        h2 {
+                            text-align: center;
+                            margin-top: 0.5rem;
+                            width: 100%;
+                            font-size: 1.3rem;
+                        }
+
+                        label {
+                            user-select: none;
+                            margin-top: 0.25rem;
+                            font-size: 0.7rem;
+                            color: #fff;
+                            padding: 0.15rem 1rem;
+                            &.administrator {
+                                background: #E74C3C;
+                            }
+
+                            &.user {
+                                background: #c9cbce;
+                            }
+                        }
+
+                        img {
+                            height: 4rem;
+                            width: 4rem;
+                            object-fit: cover;
+                            margin: 0;
+                        }
+                    }
+
+                    div.menu {
+                        margin-top: 1.5rem;
+                        width: calc(100% - 1.5rem);
+                        padding: 0 0.75rem;
+
+                        ul {
+                            width: 100%;
+                            display: flex;
+                            flex-wrap: wrap;
+                            align-items: center;
+                            justify-content: flex-start;
+                            li {
+                                margin: 0.2rem;
+                                &.panel {
+                                    a {
+                                        background: #52BE80;
+                                        border-color: #52BE80;
+
+                                        &::before {
+                                            width: 1.2rem;
+                                            text-align: center;
+                                            margin-bottom: 0.25rem;
+                                            font-size: 1rem;
+                                            content: "\f3fd";
+                                        }
+                                    }
+                                }
+
+                                &.documentation {
+                                    a {
+                                        background: #4A85DC;
+                                        border-color: #4A85DC;
+
+                                        &::before {
+                                            margin-bottom: 0.25rem;
+                                            content: "\f15c";
+                                            width: 1.2rem;
+                                            font-size: 1rem;
+                                            text-align: center;
+                                        }
+                                    }
+                                }
+
+                                &.profile {
+                                    a {
+                                        background: #FFCD00;
+                                        border-color: #FFCD00;
+
+                                        &::before {
+                                            margin-bottom: 0.25rem;
+                                            content: "\f007";
+                                            width: 1.2rem;
+                                            font-size: 1rem;
+                                            text-align: center;
+                                        }
+                                    }
+                                }
+
+                                &.logout {
+                                    a {
+                                        cursor: pointer;
+                                        background: #E74C3C;
+                                        border-color: #E74C3C;
+
+                                        &::before {
+                                            margin-bottom: 0.25rem;
+                                            content: "\f2f5";
+                                            width: 1.2rem;
+                                            font-size: 1rem;
+                                            text-align: center;
+                                        }
+                                    }
+                                }
+
+                                a {
+                                    display: flex;
+                                    flex-direction: column;
+                                    align-items: center;
+                                    justify-content: center;
+                                    color: #FFF;
+                                    height: 3rem;
+                                    width: 5rem;
+                                    font-size: 0.7rem;
+                                    transition: all 0.2s;
+                                    border: 0.1rem #222 solid;
+
+                                    &:hover {
+                                        transition: all 0.2s;
+                                        background: transparent !important;
+                                        color: #222 !important;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

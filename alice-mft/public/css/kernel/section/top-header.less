@@ -1,0 +1,78 @@
+@import "../configuration";
+
+div#container {
+
+	&.expanded header#top-header {
+		& a.menu::before {
+			transform: rotate(0);
+			transition: all 0.2s ease-in-out;
+		}
+	}
+
+	&.options header#top-header {
+		& a.options::after {
+			transform: rotate(0);
+			transition: all 0.2s ease-in-out;
+		}
+	}
+
+
+	header#top-header {
+        z-index: 999;
+		background: @header-color;
+		padding: 0 4em;
+		height: @header-top-height;
+		border-bottom: 0.1em @color-dark-gray solid;
+		position: fixed;
+		width: calc(100% - 8em);
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		@media screen and (max-width: 640px) {
+			& {
+				padding: 0 1em;
+				width: calc(100% - 2em);
+			}
+		}
+
+		p {
+			font-size: 0.75rem;
+			color: #fff;
+		}
+
+		a {
+			color: #fff;
+			font-size: 0.75rem;
+			transition: all 0.2s ease-in-out;
+            user-select: none;
+
+			&:hover {
+				color: #ffcd00;
+				transition: all 0.2s ease-in-out;
+			}
+
+			&.options, &.menu {
+				cursor: pointer;
+			}
+
+			&.menu::before {
+				display: inline-block;
+				margin-right: 0.25rem;
+				content: "\f054";
+				transform: rotate(180deg);
+				transition: all 0.2s ease-in-out;
+				font-size: 0.7rem;
+			}
+
+			&.options::after {
+				display: inline-block;
+				margin-left: 0.25rem;
+				content: "\f054";
+				transform: rotate(180deg);
+				transition: all 0.2s ease-in-out;
+				font-size: 0.7rem;
+			}
+
+		}
+	}
+}

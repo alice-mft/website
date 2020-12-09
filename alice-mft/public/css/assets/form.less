@@ -1,0 +1,280 @@
+@import "../kernel/configuration";
+
+a.button, button {
+    border: 0.1rem #fff solid;
+    color: #fff;
+    background-color: transparent;
+    transition: all 0.2s;
+    cursor: pointer;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+
+    &.dark {
+        border-color: #222;
+        background: #222;
+        &:hover {
+            background: transparent;
+            color: #222;
+            transition: all 0.2s;
+        }
+    }
+    &:hover {
+        background: rgba(255, 255, 255, 0.15);
+        transition: all 0.2s;
+    }
+}
+
+
+
+form {
+	color: #FFF;
+
+	&.row {
+		display: flex;
+		& > div.field {
+			margin-bottom: 0;
+			&:first-child {
+				margin-left: 0;
+			}
+            input[type=submit], button {
+                border-left: 0;
+            }
+		}
+	}
+
+
+    &.center {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &.between {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+	& > div.field {
+		&:last-child {
+			margin-bottom: 0;
+		}
+		display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+		margin-bottom: 1rem;
+		& > a {
+			font-size: 0.7em;
+			color: #222;
+			transition: all 0.2s;
+			&:hover {
+				color: #F1C40F;
+				transition: all 0.2s;
+			}
+		}
+
+		& > input[type="submit"].icon, & > button.icon {
+			height: 2.7rem;
+			width: 2.7rem;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+            padding: 0;
+			&::before {
+                font-family: "fa-regular";
+				content: "\f002";
+			}
+		}
+
+		& > label {
+			//width: calc(20rem + 2rem);
+			text-align: justify;
+			&.label {
+				font-size: 1em;
+				margin: 0.5em 0 0.25em 0;
+			}
+			&.helper {
+				font-size: 0.8em;
+				margin-top: 0.25em;
+			}
+			& > a {
+				color: #F1C40F;
+				margin: 0 0.3em;
+				transition: all 0.2s;
+				&:hover {
+					color: #222;
+					transition: all 0.2s;
+				}
+			}
+		}
+		& > h2 {
+			max-width: 20rem;
+		}
+		& > p {
+			max-width: 20rem;
+			text-align: center;
+		}
+
+		& > select,
+		& > input,
+		& > textarea {
+			width: 20rem;
+			&::placeholder {
+				color: #222;
+			}
+		}
+
+		& > select {
+            color: #FFF;
+            option {
+                color: #222;
+            }
+
+            optgroup {
+                color: #222;
+            }
+		}
+
+		& > select,
+		& > input[type="text"],
+		& > input[type="password"],
+		& > input[type="email"],
+		& > input[type="tel"],
+		& > input[type="search"] {
+            color: #FFF;
+			box-sizing: content-box;
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;
+			text-decoration: none;
+			padding: 0 1em;
+			height: 2.5rem;
+			background-color: transparent;
+			outline: none;
+			border: 0.1rem #FFF solid;
+            &::placeholder {
+                color: #FFF;
+            }
+			&:invalid {
+				box-shadow: none;
+			}
+			&:-moz-submit-invalid {
+				box-shadow: none;
+			}
+			&:-moz-ui-invalid {
+				box-shadow: none;
+			}
+			&.valid {
+				border: 0.08em #4caf50 solid;
+				box-shadow: 0 0 0.2em #4caf50 !important;
+				transition: all 0.2s;
+			}
+			&.invalid {
+				border: 0.08em #f44336 solid;
+				box-shadow: 0 0 0.2em #f44336 !important;
+				transition: all 0.2s;
+			}
+			&:focus {
+				box-shadow: 0 0 0.2em #d2d2d2;
+				transition: all 0.2s;
+			}
+		}
+
+		& > textarea {
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;
+			text-decoration: none;
+			padding: 0.5rem 1rem;
+			border-radius: 0.4em;
+			background-color: #f5f0f0;
+			box-shadow: 0 0 0.1em #999;
+			outline: none;
+			resize: none;
+			&:invalid {
+				box-shadow: none;
+			}
+			&:-moz-submit-invalid {
+				box-shadow: none;
+			}
+			&:-moz-ui-invalid {
+				box-shadow: none;
+			}
+			&.valid {
+				box-shadow: 0 0 0.1em #4caf50;
+				transition: all 0.2s;
+			}
+			&.invalid {
+				box-shadow: 0 0 0.1em #f44336;
+				transition: all 0.2s;
+			}
+			&:focus {
+				box-shadow: 0 0 0.1em #d2d2d2;
+				transition: all 0.2s;
+			}
+		}
+
+		& > input[type="submit"] {
+			width: auto;
+			height: 2.5rem;
+			color: #fff;
+		}
+
+		& > input[type="checkbox"],
+		& > input[type="radio"] {
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;
+			outline: none;
+			box-shadow: none;
+            display: none;
+			&:checked + label {
+				&::before {
+					content: "\f00c";
+					color: #FFF;
+					background-color: transparent;
+					border: 0.1rem #FFF solid;
+				}
+			}
+			& + label {
+				font-size: 0.9em;
+				text-transform: none;
+				height: 2rem;
+				display: flex;
+				align-items: center;
+				justify-content: flex-start;
+				&.center {
+					justify-content: center;
+				}
+				position: relative;
+				cursor: pointer;
+				&::before {
+					-moz-osx-font-smoothing: grayscale;
+					-webkit-font-smoothing: antialiased;
+                    font-size: 0.5rem;
+					content: "";
+					height: 0.8rem;
+					width: 0.8rem;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					position: relative;
+					margin-right: 0.4em;
+					left: 0;
+					top: 0;
+                    background-color: transparent;
+                    border: 0.1rem #FFF solid;
+				}
+			}
+		}
+
+		& > input[type="radio"] + label:before {
+			border-radius: 100%;
+		}
+	}
+
+	button:disabled, input:disabled {
+		cursor: not-allowed !important;
+	}
+}

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,7 +13,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
+Route::view("/", "welcome");
+Route::group(["prefix" => "examples"], function () {
+    Route::get("/basic", [Controllers\Examples\Basic::class, "__construct"]);
+    Route::get("/dashboard", [Controllers\Examples\Dashboard::class, "__construct"]);
+    Route::get("/article", [Controllers\Examples\Article::class, "__construct"]);
 });

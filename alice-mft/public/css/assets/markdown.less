@@ -1,0 +1,140 @@
+@import "../kernel/configuration";
+
+div.markdown,
+section.markdown {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    line-height: 1.5;
+    color: #24292e;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+    font-size: 16px;
+    word-wrap: break-word;
+
+    & > * {
+        margin-top: 1rem !important;
+
+        &:first-child {
+            margin-top: 0 !important;
+        }
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin-top: 2rem !important;
+        font-weight: 600;
+    }
+
+    h1 {
+        font-size: 3em;
+        text-align: center;
+        text-transform: uppercase;
+        border: 1px solid #c9cbce;
+        padding: 0.4rem;
+        margin-bottom: 2rem;
+    }
+
+    h2 {
+        padding-bottom: 0.2rem;
+        border-bottom: 1px solid #eaecef;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    h3 {
+        font-size: 1.25em;
+    }
+
+    h4 {
+        font-size: 1em;
+    }
+
+    h5 {
+        font-size: 0.875em;
+    }
+
+    h6 {
+        font-size: 0.85em;
+        color: #6a737d;
+    }
+
+    p {
+        text-align: justify;
+    }
+
+    a {
+        background-color: initial;
+        color: #0366d6;
+        text-decoration: none;
+        &:not([href]) {
+            color: inherit;
+            text-decoration: none;
+        }
+        &:active,
+        &:hover {
+            outline-width: 0;
+            text-decoration: underline;
+        }
+    }
+
+    blockquote {
+        color: #6a737d;
+        border-left: 0.25em solid #dfe2e5;
+        background-color: #f6f8fa;
+        padding: 8px 1em;
+    }
+
+    ol,
+    ul {
+        list-style-type: initial;
+        padding-left: 2em;
+    }
+
+    pre {
+        border-left: 0.25em solid #dfe2e5;
+        word-wrap: normal;
+        padding: 16px;
+        overflow: auto;
+        font-size: 85%;
+        line-height: 1.45;
+        background-color: #f6f8fa;
+        border-radius: 3px;
+        code {
+            padding: 0;
+            margin: 0;
+            font-size: 100%;
+            word-break: normal;
+            white-space: pre;
+            background: transparent;
+            border: 0;
+        }
+    }
+
+    code {
+        font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
+        padding: 0.2em 0.4em;
+        font-size: 85%;
+        background-color: rgba(27, 31, 35, .05);
+        border-radius: 3px;
+    }
+
+    img {
+        width: 100%;
+        box-sizing: initial;
+        background-color: #fff;
+        border-style: none;
+    }
+
+    strong {
+        font-weight: bold;
+    }
+
+    em {
+        font-style: italic;
+    }
+}

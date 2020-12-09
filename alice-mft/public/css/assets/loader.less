@@ -1,0 +1,34 @@
+@import "../kernel/configuration";
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(1080deg);
+	}
+}
+
+html.loading {
+    div#loader {
+        z-index: 999;
+        background: @color-black;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        display: flex;
+        position: fixed;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        & > span {
+            border: 0.2em @color-black solid;
+            border-radius: 50%;
+            border-top: 0.2em #FFF solid;
+            width: 1.5em;
+            height: 1.5em;
+            animation: spin 2s cubic-bezier(0.75,0.25,0.25,0.75) infinite;
+        }
+    }
+}

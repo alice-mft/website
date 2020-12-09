@@ -1,0 +1,24 @@
+@import "../kernel/configuration";
+
+section#main {
+    div#scroller {
+        position: fixed;
+        height: 2.5rem;
+        width: 2.5rem;
+        right: 3rem;
+        bottom: 3rem;
+        background: #fff;
+        box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.4);
+        cursor: pointer;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        & span {
+            &::before {
+                content: "\f106";
+                font-family: "fa-regular";
+            }
+        }
+    }
+}
