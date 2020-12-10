@@ -1,30 +1,26 @@
-class WebSocket {
+class WebSocket2 {
 
     constructor(host, port, endpoint) {
         this.host = host;
         this.port = port;
         this.endpoint = endpoint;
+        this.url = "http://" + this.host + ":" + this.port + this.endpoint;
         this.client = null;
     }
 
-    connect(callback, openCallback, closeCallback) {
+    connect(openCallback, closeCallback) {
         if (this.client != null)
             return;
 
-        var socket = new SockJS("http://" + this.host + ":" + this.port + this.endpoint);
-
-        socket.onopen = () => {
-            alert("onopen")
-            openCallback();
-        };
-        socket.onclose = () => {
-            alert("onclose")
-            closeCallback();
-        };
-
-        this.client = Stomp.over(socket);
+        this.client = Stomp.over(new SockJS(this.url));
         this.client.connect({}, () => {
-            callback();
+            if (openCallback != null) {
+                openCallback();
+            }
+        }, () => {
+            if (closeCallback != null) {
+                closeCallback();
+            }
         });
     }
 
@@ -41,7 +37,9 @@ class WebSocket {
             return;
 
         this.client.subscribe(path, (message) => {
-            callback(message);
+            if (callback != null) {
+                callback(message);
+            }
         });
     }
 

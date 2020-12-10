@@ -1,6 +1,5 @@
-function showAlert(content) {
-
-    $("div#container").prepend('<div id="alert"><div class="popup"><span class="close"></span><div class="header"><img src="../../../img/mft/banner-dark.png""></div><div class="body"><p>' + content + '</p><button class="dark">Refresh</button></div></div></div>');
+function triggerAlert(content) {
+    $("div#container").prepend('<div id="alert"><div class="popup"><span class="close"></span><div class="header"><img src="../../../img/mft/banner-dark.png""></div><div class="body"><h3>' + content.title + '</h3><p>' + content.description + '</p><button class="dark">Refresh</button></div></div></div>');
 
     $("div#alert").hide();
     $("div#alert").fadeIn(200, () => {
@@ -16,6 +15,13 @@ function showAlert(content) {
     $("div#alert span").on("click", () => {
         $("div#alert > div.popup").hide("drop", {direction: "up"}, 200);
         $("div#alert").fadeOut(200);
+    });
+
+    $(document).on('keydown', function(event) {
+        if (event.key === "Escape") {
+            $("div#alert > div.popup").hide("drop", {direction: "up"}, 200);
+            $("div#alert").fadeOut(200);
+        }
     });
 
     var a = $("div#alert").offsetTop;
