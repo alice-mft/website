@@ -10,6 +10,7 @@
 
 @section("container")
     <section id="main">
+        @yield("background")
         @yield("header")
 
         <section id="area">

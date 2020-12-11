@@ -3,6 +3,7 @@
 @import "../section/top-header";
 @import "../section/header";
 @import "../section/footer";
+@import "../section/background";
 
 @import "../section/dashboard/navigation";
 @import "../section/dashboard/options";
@@ -28,8 +29,7 @@ div#container.dashboard {
         transition: all 0.4s ease-in-out;
 
         & > section#area {
-            min-height: calc(100vh - @header-bottom-height - @header-top-height);
-            padding: 2rem;
+            min-height: calc(100vh - @header-height - @header-top-height);
         }
     }
 }

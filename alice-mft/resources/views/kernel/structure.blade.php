@@ -27,6 +27,7 @@
 </head>
 
 <body style="display: none;">
+
     <!-- Loader -->
     <div id="loader">
         <span></span>

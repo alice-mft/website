@@ -2,6 +2,7 @@
 
 @import "../section/header";
 @import "../section/footer";
+@import "../section/background";
 @import "../section/article/menu";
 
 @import "../../assets/scroller";
@@ -9,7 +10,7 @@
 div#container.article {
     & > section#main {
         & > section#area {
-            min-height: calc(100vh - @header-bottom-height - 8rem);
+            min-height: calc(100vh - @header-height - 8rem);
             display: flex;
             align-items: flex-start;
             justify-content: center;

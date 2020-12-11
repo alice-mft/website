@@ -3,9 +3,9 @@ $("#logout").on("click", () => {
     AjaxRequest({
         type: "POST",
         form: "form",
-        url: "profile/logout",
+        url: "account/logout",
         onSuccess: (data, status, result) => {
-            redirectTo("/profile/login");
+            redirectTo("/account/login");
         }
     });
 });
@@ -67,10 +67,10 @@ $("table.datatable").each((i, element) => {
     $(element).dataTable();
 });
 
-// profile dropdown
-$("header div.profile a").on("click", () => {
-    var profile = $("header div.profile");
-    var dropdown = $("header div.profile div.dropdown");
+// account dropdown
+$("header div.account a").on("click", () => {
+    var profile = $("header div.account");
+    var dropdown = $("header div.account div.dropdown");
 
     if (profile.hasClass("developed")) {
         dropdown.hide("blind", {}, 250, () => {

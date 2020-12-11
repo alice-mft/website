@@ -2,14 +2,14 @@
 
 @import "../section/header";
 @import "../section/footer";
+@import "../section/background";
 
 @import "../../librairies/datatables";
 
 div#container.basic {
     & > section#main {
         & > section#area {
-            min-height: calc(100vh - @header-bottom-height);
-            padding: 2rem;
+            min-height: calc(100vh - @header-height);
         }
     }
 }

@@ -2,14 +2,16 @@
 
 header#header {
     z-index: 999;
+    position: relative;
     background: @header-color;
     color: #fff;
-    height: @header-bottom-height;
+    height: @header-height;
     width: calc( 100% - 8em);
     display: flex;
     padding: 0 4em;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 0 0 0.3em rgba(0, 0, 0, 0.4);
 
     @media screen and (max-width: 640px) {
         & {
@@ -58,10 +60,6 @@ header#header {
                     color: #ffcd00;
                     transition: all 0.2s ease-in-out;
                 }
-            }
-
-            &.developed div.dropdown {
-                display: flex;
             }
 
             div.dropdown {

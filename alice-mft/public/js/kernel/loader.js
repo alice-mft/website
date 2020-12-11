@@ -15,6 +15,18 @@ window.addEventListener("load", () => {
 $(document).ready(() => {
     $("body").css("display", "flex");
 
+    // Dynamic height
+    $("*[data-height]").each((i, element) => {
+        var attribute = $(element).attr("data-height");
+        $(element).css("height", attribute);
+    });
+
+    // Load images
+    $("*[data-image]").each((i, element) => {
+        var attribute = $(element).data("image");
+        $(element).css("background-image", "url('" + attribute + "')");
+    });
+
     $(window).ready(() => {
         window.scrollTo(0, 0);
     });

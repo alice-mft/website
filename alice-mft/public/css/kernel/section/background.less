@@ -1,0 +1,42 @@
+@import "../configuration";
+
+section#area {
+    background: #1F1F1F;
+
+    div#background {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin: 0;
+        span {
+            background: #E74C3C;
+            width: 100%;
+        }
+        canvas {
+            width: 100%;
+        }
+    }
+
+    div#foreground {
+        position: relative;
+        z-index: 999;
+    }
+}
+
+
+div#container.dashboard {
+    div#background {
+        top: @header-height + @header-top-height;
+        left: 0;
+        width: 100%;
+    }
+}
+
+div#container.basic {
+    div#background {
+        top: @header-height;
+        width: 100%;
+    }
+}

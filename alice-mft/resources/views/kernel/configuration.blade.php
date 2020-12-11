@@ -12,7 +12,6 @@
 
 @section("styles")
     <link rel="stylesheet/less" type="text/css" href="{{ asset("css/kernel/default.less") }}" />
-    <link rel="stylesheet/less" type="text/css" href="{{ asset("css/assets/alert.less") }}" />
 @endsection
 
 @section("scripts")

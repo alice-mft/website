@@ -1,280 +1,214 @@
 @import "../kernel/configuration";
 
-a.button, button {
-    border: 0.1rem #fff solid;
-    color: #fff;
-    background-color: transparent;
-    transition: all 0.2s;
-    cursor: pointer;
-    display: inline-block;
-    padding: 0.5rem 1rem;
+div#form {
+    position: relative;
+    box-shadow: 0 0 0.3em rgba(0, 0, 0, 0.4);
+    border-top: 0.3rem #222 solid;
+    background: #fff;
+    padding: 6rem 3rem;
+    color: #222;
 
-    &.dark {
-        border-color: #222;
-        background: #222;
-        &:hover {
-            background: transparent;
-            color: #222;
-            transition: all 0.2s;
+    h1 {
+        font-size: 3rem;
+        text-transform: uppercase;
+        letter-spacing: 0.175rem;
+        text-align: center;
+        border: 0.1rem #222 solid;
+        margin-bottom: 2rem;
+        width: 100%;
+    }
+
+    img {
+        max-width: 100%;
+        margin-bottom: 2em;
+    }
+
+    form {
+        width: 100%;
+
+        // Collapsed
+        &.collapsed {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            div.field {
+                margin-bottom: 0;
+
+                &:first-child {
+                    width: 100%;
+                }
+
+                &:last-child {
+                    width: 2.5rem;
+                }
+
+
+
+            }
         }
-    }
-    &:hover {
-        background: rgba(255, 255, 255, 0.15);
-        transition: all 0.2s;
-    }
-}
 
+        // Field
+        div.field {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
 
-
-form {
-	color: #FFF;
-
-	&.row {
-		display: flex;
-		& > div.field {
-			margin-bottom: 0;
-			&:first-child {
-				margin-left: 0;
-			}
-            input[type=submit], button {
-                border-left: 0;
+            &:last-child {
+                margin-bottom: 0;
             }
-		}
-	}
 
+            a {
+                font-size: 0.9rem;
+                color: @color-yellow;
+                border-bottom: 0.1rem @color-yellow solid;
+                transition: all 0.2s;
 
-    &.center {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+                &:hover {
+                    color: #222;
+                    border-color: #222;
+                    transition: all 0.2s;
+                }
+            }
 
-    &.between {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
+            // Labels
+            label {
+                text-align: justify;
+                text-align-last: left;
+                user-select: none;
+                width: 100%;
 
-	& > div.field {
-		&:last-child {
-			margin-bottom: 0;
-		}
-		display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-		margin-bottom: 1rem;
-		& > a {
-			font-size: 0.7em;
-			color: #222;
-			transition: all 0.2s;
-			&:hover {
-				color: #F1C40F;
-				transition: all 0.2s;
-			}
-		}
+                &.label {
+                    font-size: 1em;
+                    margin: 0.5em 0 0.25em 0;
+                }
 
-		& > input[type="submit"].icon, & > button.icon {
-			height: 2.7rem;
-			width: 2.7rem;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-            padding: 0;
-			&::before {
-                font-family: "fa-regular";
-				content: "\f002";
-			}
-		}
+                &.helper {
+                    font-size: 0.8em;
+                    margin-top: 0.25em;
+                }
 
-		& > label {
-			//width: calc(20rem + 2rem);
-			text-align: justify;
-			&.label {
-				font-size: 1em;
-				margin: 0.5em 0 0.25em 0;
-			}
-			&.helper {
-				font-size: 0.8em;
-				margin-top: 0.25em;
-			}
-			& > a {
-				color: #F1C40F;
-				margin: 0 0.3em;
-				transition: all 0.2s;
-				&:hover {
-					color: #222;
-					transition: all 0.2s;
-				}
-			}
-		}
-		& > h2 {
-			max-width: 20rem;
-		}
-		& > p {
-			max-width: 20rem;
-			text-align: center;
-		}
+                a {
+                    margin-left: 0.3rem;
+                }
+            }
 
-		& > select,
-		& > input,
-		& > textarea {
-			width: 20rem;
-			&::placeholder {
-				color: #222;
-			}
-		}
-
-		& > select {
-            color: #FFF;
-            option {
+            // Inputs
+            select,
+            textarea,
+            input[type="text"],
+            input[type="password"],
+            input[type="email"],
+            input[type="tel"],
+            input[type="search"] {
+                width: calc(100% - 2rem);
                 color: #222;
+                box-sizing: content-box;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+                text-decoration: none;
+                outline: none;
+                background-color: #f5f0f0;
+                box-shadow: 0 0 0.1em #999;
+
+                &::placeholder {
+                    color: #222;
+                }
+
+                &.valid {
+                    border: 0.08em #4caf50 solid;
+                    box-shadow: 0 0 0.1em #4caf50 !important;
+                    transition: all 0.2s;
+                }
+
+                &.invalid {
+                    border: 0.08em #f44336 solid;
+                    box-shadow: 0 0 0.1em #f44336 !important;
+                    transition: all 0.2s;
+                }
+
+                &:focus {
+                    box-shadow: 0 0 0.1em #d2d2d2;
+                    transition: all 0.2s;
+                }
             }
 
-            optgroup {
-                color: #222;
+            input {
+                height: 2.5rem;
+                padding: 0 1em;
             }
-		}
 
-		& > select,
-		& > input[type="text"],
-		& > input[type="password"],
-		& > input[type="email"],
-		& > input[type="tel"],
-		& > input[type="search"] {
-            color: #FFF;
-			box-sizing: content-box;
-			-webkit-appearance: none;
-			-moz-appearance: none;
-			appearance: none;
-			text-decoration: none;
-			padding: 0 1em;
-			height: 2.5rem;
-			background-color: transparent;
-			outline: none;
-			border: 0.1rem #FFF solid;
-            &::placeholder {
-                color: #FFF;
+            textarea {
+                padding: 1rem;
+                resize: none;
             }
-			&:invalid {
-				box-shadow: none;
-			}
-			&:-moz-submit-invalid {
-				box-shadow: none;
-			}
-			&:-moz-ui-invalid {
-				box-shadow: none;
-			}
-			&.valid {
-				border: 0.08em #4caf50 solid;
-				box-shadow: 0 0 0.2em #4caf50 !important;
-				transition: all 0.2s;
-			}
-			&.invalid {
-				border: 0.08em #f44336 solid;
-				box-shadow: 0 0 0.2em #f44336 !important;
-				transition: all 0.2s;
-			}
-			&:focus {
-				box-shadow: 0 0 0.2em #d2d2d2;
-				transition: all 0.2s;
-			}
-		}
 
-		& > textarea {
-			-webkit-appearance: none;
-			-moz-appearance: none;
-			appearance: none;
-			text-decoration: none;
-			padding: 0.5rem 1rem;
-			border-radius: 0.4em;
-			background-color: #f5f0f0;
-			box-shadow: 0 0 0.1em #999;
-			outline: none;
-			resize: none;
-			&:invalid {
-				box-shadow: none;
-			}
-			&:-moz-submit-invalid {
-				box-shadow: none;
-			}
-			&:-moz-ui-invalid {
-				box-shadow: none;
-			}
-			&.valid {
-				box-shadow: 0 0 0.1em #4caf50;
-				transition: all 0.2s;
-			}
-			&.invalid {
-				box-shadow: 0 0 0.1em #f44336;
-				transition: all 0.2s;
-			}
-			&:focus {
-				box-shadow: 0 0 0.1em #d2d2d2;
-				transition: all 0.2s;
-			}
-		}
+            select {
+                height: 2.5rem;
+                padding: 0 1em;
+            }
 
-		& > input[type="submit"] {
-			width: auto;
-			height: 2.5rem;
-			color: #fff;
-		}
+            // Checkbox / Radio buttons
+            input[type="checkbox"],
+            input[type="radio"] {
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+                outline: none;
+                box-shadow: none;
+                display: none;
 
-		& > input[type="checkbox"],
-		& > input[type="radio"] {
-			-webkit-appearance: none;
-			-moz-appearance: none;
-			appearance: none;
-			outline: none;
-			box-shadow: none;
-            display: none;
-			&:checked + label {
-				&::before {
-					content: "\f00c";
-					color: #FFF;
-					background-color: transparent;
-					border: 0.1rem #FFF solid;
-				}
-			}
-			& + label {
-				font-size: 0.9em;
-				text-transform: none;
-				height: 2rem;
-				display: flex;
-				align-items: center;
-				justify-content: flex-start;
-				&.center {
-					justify-content: center;
-				}
-				position: relative;
-				cursor: pointer;
-				&::before {
-					-moz-osx-font-smoothing: grayscale;
-					-webkit-font-smoothing: antialiased;
-                    font-size: 0.5rem;
-					content: "";
-					height: 0.8rem;
-					width: 0.8rem;
-					display: flex;
-					align-items: center;
-					justify-content: center;
-					position: relative;
-					margin-right: 0.4em;
-					left: 0;
-					top: 0;
-                    background-color: transparent;
-                    border: 0.1rem #FFF solid;
-				}
-			}
-		}
+                & + label {
+                    font-size: 0.9em;
+                    text-transform: none;
+                    height: 2rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    position: relative;
+                    cursor: pointer;
 
-		& > input[type="radio"] + label:before {
-			border-radius: 100%;
-		}
-	}
+                    &::before {
+                        background-color: #f5f0f0;
+                        box-shadow: 0 0 0.1em #999;
+                        font-family: "fa-regular", sans-serif;
+                        -moz-osx-font-smoothing: grayscale;
+                        -webkit-font-smoothing: antialiased;
+                        font-size: 0.7rem;
+                        content: "";
+                        height: 0.9rem;
+                        width: 0.9rem;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        position: relative;
+                        margin-right: 0.4em;
+                        left: 0;
+                        top: 0;
+                    }
+                }
 
-	button:disabled, input:disabled {
-		cursor: not-allowed !important;
-	}
+                &:checked + label {
+                    &::before {
+                        content: "\f00c";
+                        color: #222;
+                    }
+                }
+            }
+
+            & > input[type="radio"] + label:before {
+                border-radius: 100%;
+            }
+
+            // Other
+            button:disabled,
+            input:disabled {
+                cursor: not-allowed !important;
+            }
+        }
+
+    }
 }

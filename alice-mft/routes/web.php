@@ -13,9 +13,23 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::view("/", "welcome");
+Route::view("/", "contents/main");
+
 Route::group(["prefix" => "examples"], function () {
     Route::get("/basic", [Controllers\Examples\Basic::class, "__construct"]);
     Route::get("/dashboard", [Controllers\Examples\Dashboard::class, "__construct"]);
     Route::get("/article", [Controllers\Examples\Article::class, "__construct"]);
+});
+
+Route::group(["prefix" => "account"], function () {
+    Route::get("/login", [Controllers\Contents\Account\Login::class, "__construct"]);
+    Route::get("/register", [Controllers\Contents\Account\Register::class, "__construct"]);
+});
+
+Route::group(["prefix" => "dashboard"], function () {
+    Route::get("/", [Controllers\Contents\Dashboard\Main::class, "__construct"]);
+});
+
+Route::group(["prefix" => "error"], function () {
+    Route::view("/", "contents/error/error");
 });
