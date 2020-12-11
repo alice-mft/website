@@ -23,6 +23,7 @@
         @yield("header")
 
         <section id="area">
+            @yield("background")
             @yield("section")
         </section>
 

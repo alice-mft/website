@@ -5,12 +5,13 @@
 
 @section("styles")
     @parent
-    <link rel="stylesheet/less" type="text/css" href="{{ url("css/kernel/template/article.less") }}" />
+    <link rel="stylesheet/less" type="text/css" href="{{ asset("css/kernel/template/article.less") }}" />
 @endsection
 
 @section("scripts")
     @parent
     <script src="{{ url("js/assets/scroller.js") }}"></script>
+    <script src="{{ asset("js/kernel/template/article.js") }}"></script>
 @endsection
 
 @section("container")
@@ -18,6 +19,7 @@
         @yield("header")
 
         <section id="area">
+            @yield("background")
             @yield("menu")
 
             <div id="contents">

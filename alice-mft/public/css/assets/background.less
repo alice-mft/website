@@ -1,4 +1,4 @@
-@import "../configuration";
+@import "../kernel/configuration";
 
 section#area {
     background: #1F1F1F;
@@ -21,7 +21,6 @@ section#area {
 
     div#foreground {
         position: relative;
-        z-index: 999;
     }
 }
 
@@ -35,6 +34,13 @@ div#container.dashboard {
 }
 
 div#container.basic {
+    div#background {
+        top: @header-height;
+        width: 100%;
+    }
+}
+
+div#container.article {
     div#background {
         top: @header-height;
         width: 100%;

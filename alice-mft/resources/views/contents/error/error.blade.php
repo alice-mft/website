@@ -12,14 +12,16 @@
     <script src="{{asset("js/contents/error/error.js")}}"></script>
 @endsection
 
-@section("section")
+@section("background")
     <div id="background">
         <span class="top" data-height="30rem"></span>
         <canvas id="waves" height="200" width="1200"></canvas>
     </div>
+@endsection
 
+@section("section")
     <div id="foreground" style="display: flex;">
-        <div id="box">
+        <div class="box">
             <img src="{{ asset("img/svg/error.svg") }}" />
             <h1>An error occured !</h1>
             <p>This site uses JavaScript features to enhance your experience. Unfortunately, you have disabled it and therefore we cannot provide you with access to the site.</p>

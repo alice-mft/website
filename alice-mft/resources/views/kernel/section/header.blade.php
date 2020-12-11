@@ -6,8 +6,10 @@
             <a href="@if (session()->has("account")) {{url("/dashboard")}} @else {{url("/")}} @endif" class="text">ALICE MFT</a>
         </div>
 
-        @if(session()->has("account"))
-            <div class="profile">
+        @if (Request::is('/'))
+            <a href="{{ url("account/login") }}" class="button transparent light fit">Access the dashboard</a>
+        @elseif(session()->has("account"))
+            <div class="account">
                 <a>{{ session()->get("account")->getCompleteName() }}</a>
                 <div class="dropdown">
                     <div class="content">
@@ -41,8 +43,6 @@
                     </div>
                 </div>
             </div>
-        @else
-            <a href="{{ url("account/login") }}" class="button transparent light fit">Access the dashboard</a>
         @endif
     </header>
 @endsection

@@ -1,14 +1,15 @@
-@extends("kernel.template.dashboard")
+@extends("kernel.template.article")
+@extends("kernel.section.article.documentation")
 
 @section("styles")
     @parent
-    <link rel="stylesheet/less" type="text/css" href="{{ asset("css/contents/dashboard/main.less") }}" />
+    <link rel="stylesheet/less" type="text/css" href="{{ asset("css/contents/documentation/main.less") }}" />
 @endsection
 
 @section("scripts")
     @parent
     <script src="{{asset("js/assets/waves.js")}}"></script>
-    <script src="{{asset("js/contents/dashboard/main.js")}}"></script>
+    <script src="{{asset("js/contents/documentation/main.js")}}"></script>
 @endsection
 
 @section("background")
@@ -20,9 +21,8 @@
 
 @section("section")
     <div id="foreground" style="display: flex;">
-        <div class="box article markdown">
+        <div class="box full markdown">
             {!! $contents ?? "An error occured" !!}
         </div>
     </div>
-
 @endsection

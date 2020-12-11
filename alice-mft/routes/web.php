@@ -33,3 +33,7 @@ Route::group(["prefix" => "dashboard"], function () {
 Route::group(["prefix" => "error"], function () {
     Route::view("/", "contents/error/error");
 });
+
+Route::group(["prefix" => "documentation"], function () {
+    Route::get("/{section?}", [Controllers\Contents\Documentation\Main::class, "__construct"]);
+});

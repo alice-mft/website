@@ -1,9 +1,18 @@
 SetLoadingAnimation({
-    selector: "div#article",
+    selector: "div.box",
     effect: "drop",
     duration: 200,
     options: {
         direction: "down"
+    }
+});
+
+SetLoadingAnimation({
+    selector: "nav#menu",
+    effect: "drop",
+    duration: 200,
+    options: {
+        direction: "left"
     }
 });
 
