@@ -15,212 +15,220 @@ div#form {
         max-width: 100%;
         margin-bottom: 2em;
     }
+}
 
-    form {
+form {
+    width: 100%;
+
+    // Collapsed
+    &.collapsed {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         width: 100%;
+        div.field {
+            margin-bottom: 0;
 
-        // Collapsed
-        &.collapsed {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            div.field {
-                margin-bottom: 0;
+            &:first-child {
+                width: 100%;
+            }
 
-                &:first-child {
-                    width: 100%;
-                }
+            &:last-child {
+                width: 2.5rem;
+            }
+        }
+    }
+
+    &.stacked {
+        display: flex;
+        justify-content: space-between;
+
+        div.field {
+            margin-bottom: 0;
+        }
+    }
+
+    // Field
+    div.field {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &.row {
+            flex-direction: row;
+
+            * {
+                width: 100%;
+                margin-right: 1rem;
 
                 &:last-child {
-                    width: 2.5rem;
+                    margin-right: 0;
                 }
-
-
-
             }
         }
 
-        // Field
-        div.field {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
+        a {
+            font-size: 0.9rem;
+            color: @color-yellow;
+            border-bottom: 0.1rem @color-yellow solid;
+            transition: all 0.2s;
 
-            &:last-child {
-                margin-bottom: 0;
+            &:hover {
+                color: #222;
+                border-color: #222;
+                transition: all 0.2s;
+            }
+        }
+
+        // Labels
+        label {
+            text-align: justify;
+            text-align-last: left;
+            user-select: none;
+            width: 100%;
+
+            &.label {
+                font-size: 1em;
+                margin: 0.5em 0 0.25em 0;
+                a {
+                    font-size: 1rem;
+                }
             }
 
-            &.row {
-                flex-direction: row;
-
-                * {
-                    width: 100%;
-                    margin-right: 1rem;
-
-                    &:last-child {
-                        margin-right: 0;
-                    }
+            &.helper {
+                font-size: 0.8em;
+                margin-top: 0.25em;
+                a {
+                    font-size: 0.8rem;
                 }
             }
 
             a {
-                font-size: 0.9rem;
-                color: @color-yellow;
-                border-bottom: 0.1rem @color-yellow solid;
-                transition: all 0.2s;
-
-                &:hover {
-                    color: #222;
-                    border-color: #222;
-                    transition: all 0.2s;
-                }
-            }
-
-            // Labels
-            label {
-                text-align: justify;
-                text-align-last: left;
-                user-select: none;
-                width: 100%;
-
-                &.label {
-                    font-size: 1em;
-                    margin: 0.5em 0 0.25em 0;
-                    a {
-                        font-size: 1rem;
-                    }
-                }
-
-                &.helper {
-                    font-size: 0.8em;
-                    margin-top: 0.25em;
-                    a {
-                        font-size: 0.8rem;
-                    }
-                }
-
-                a {
-                    margin-left: 0.2rem;
-                }
-            }
-
-            // Inputs
-            select,
-            textarea,
-            input[type="text"],
-            input[type="password"],
-            input[type="email"],
-            input[type="tel"],
-            input[type="search"] {
-                width: calc(100% - 2rem);
-                color: #222;
-                box-sizing: content-box;
-                -webkit-appearance: none;
-                -moz-appearance: none;
-                appearance: none;
-                text-decoration: none;
-                outline: none;
-                background-color: #f5f0f0;
-                box-shadow: 0 0 0.1em #999;
-
-                &::placeholder {
-                    color: #222;
-                }
-
-                &.valid {
-                    border: 0.08em #4caf50 solid;
-                    box-shadow: 0 0 0.1em #4caf50 !important;
-                    transition: all 0.2s;
-                }
-
-                &.invalid {
-                    border: 0.08em #f44336 solid;
-                    box-shadow: 0 0 0.1em #f44336 !important;
-                    transition: all 0.2s;
-                }
-
-                &:focus {
-                    box-shadow: 0 0 0.1em #d2d2d2;
-                    transition: all 0.2s;
-                }
-            }
-
-            input {
-                height: 2.5rem;
-                padding: 0 1em;
-            }
-
-            textarea {
-                padding: 1rem;
-                resize: none;
-            }
-
-            select {
-                height: 2.5rem;
-                padding: 0 1em;
-            }
-
-            // Checkbox / Radio buttons
-            input[type="checkbox"],
-            input[type="radio"] {
-                -webkit-appearance: none;
-                -moz-appearance: none;
-                appearance: none;
-                outline: none;
-                box-shadow: none;
-                display: none;
-
-                & + label {
-                    font-size: 0.9em;
-                    text-transform: none;
-                    height: 2rem;
-                    display: flex;
-                    align-items: center;
-                    justify-content: flex-start;
-                    position: relative;
-                    cursor: pointer;
-
-                    &::before {
-                        background-color: #f5f0f0;
-                        box-shadow: 0 0 0.1em #999;
-                        font-family: "fa-regular", sans-serif;
-                        -moz-osx-font-smoothing: grayscale;
-                        -webkit-font-smoothing: antialiased;
-                        font-size: 0.7rem;
-                        content: "";
-                        height: 0.9rem;
-                        width: 0.9rem;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        position: relative;
-                        margin-right: 0.4em;
-                        left: 0;
-                        top: 0;
-                    }
-                }
-
-                &:checked + label {
-                    &::before {
-                        content: "\f00c";
-                        color: #222;
-                    }
-                }
-            }
-
-            & > input[type="radio"] + label:before {
-                border-radius: 100%;
-            }
-
-            // Other
-            button:disabled,
-            input:disabled {
-                cursor: not-allowed !important;
+                margin-left: 0.2rem;
             }
         }
 
+        // Inputs
+        select,
+        textarea,
+        input[type="text"],
+        input[type="password"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="search"] {
+            width: calc(100% - 2rem);
+            color: #222;
+            box-sizing: content-box;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            text-decoration: none;
+            outline: none;
+            background-color: #FFF;
+            box-shadow: 0 0 0.1em rgba(0, 0, 0, 0.4);
+            border: 0.08em transparent solid;
+            margin: 0.2rem 0;
+
+            &::placeholder {
+                color: #222;
+            }
+
+            &.valid {
+                border: 0.08em #4caf50 solid;
+                box-shadow: 0 0 0.1em #4caf50 !important;
+                transition: all 0.2s;
+            }
+
+            &.invalid {
+                border: 0.08em #f44336 solid;
+                box-shadow: 0 0 0.1em #f44336 !important;
+                transition: all 0.2s;
+            }
+
+            &:focus {
+                box-shadow: 0 0 0.1em #d2d2d2;
+                transition: all 0.2s;
+            }
+        }
+
+        input {
+            height: 2.5rem;
+            padding: 0 1em;
+        }
+
+        textarea {
+            padding: 1rem;
+            resize: none;
+        }
+
+        select {
+            height: 2.5rem;
+            padding: 0 1em;
+        }
+
+        // Checkbox / Radio buttons
+        input[type="checkbox"],
+        input[type="radio"] {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            outline: none;
+            box-shadow: none;
+            display: none;
+
+            & + label {
+                font-size: 0.9em;
+                text-transform: none;
+                height: 2rem;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                position: relative;
+                cursor: pointer;
+
+                &::before {
+                    background-color: rgba(255, 255, 255, 0.15);
+                    box-shadow: 0 0 0.1em rgba(0, 0, 0, 0.4);
+                    font-family: "fa-regular", sans-serif;
+                    -moz-osx-font-smoothing: grayscale;
+                    -webkit-font-smoothing: antialiased;
+                    font-size: 0.7rem;
+                    content: "";
+                    height: 0.9rem;
+                    width: 0.9rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: relative;
+                    margin-right: 0.4em;
+                    left: 0;
+                    top: 0;
+                }
+            }
+
+            &:checked + label {
+                &::before {
+                    content: "\f00c";
+                    color: #222;
+                }
+            }
+        }
+
+        & > input[type="radio"] + label:before {
+            border-radius: 100%;
+        }
+
+        // Other
+        button:disabled,
+        input:disabled {
+            cursor: not-allowed !important;
+        }
     }
+
 }

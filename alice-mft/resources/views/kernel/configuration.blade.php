@@ -6,6 +6,8 @@
 @section("title", "ALICE MFT - Dashboard")
 @section("author", "Timothée Bazin")
 
+@section("theme", "light")
+
 @section("favicon")
     <link rel="icon" href="{{ asset("img/alice/icon.png") }}" />
 @endsection

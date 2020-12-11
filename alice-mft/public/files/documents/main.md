@@ -1,4 +1,5 @@
 # Documentation
+![](files/documents/illustration.svg)
 
 ## Introduction
 *ALICE MFT Dashboard* is a project powered by the [CERN](https://home.cern/). It has been created to assist scientists on the [ALICE](https://home.cern/fr/science/alice) experiment. It aims to list, index, and optimally display information about the detector components.

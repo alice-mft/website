@@ -4,12 +4,14 @@
 @section("styles")
     @parent
     <link rel="stylesheet/less" type="text/css" href="{{ asset("css/contents/documentation/main.less") }}" />
+    <link rel="stylesheet/less" type="text/css" href="{{ asset("css/librairies/prism.less") }}" />
 @endsection
 
 @section("scripts")
     @parent
     <script src="{{asset("js/assets/waves.js")}}"></script>
     <script src="{{asset("js/contents/documentation/main.js")}}"></script>
+    <script src="{{asset("js/librairies/prism.js")}}"></script>
 @endsection
 
 @section("background")
@@ -20,7 +22,7 @@
 @endsection
 
 @section("section")
-    <div id="foreground" style="display: flex;">
+    <div id="foreground">
         <div class="box full markdown">
             {!! $contents ?? "An error occured" !!}
         </div>

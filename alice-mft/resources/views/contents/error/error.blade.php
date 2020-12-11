@@ -20,7 +20,7 @@
 @endsection
 
 @section("section")
-    <div id="foreground" style="display: flex;">
+    <div id="foreground">
         <div class="box">
             <img src="{{ asset("img/svg/error.svg") }}" />
             <h1>An error occured !</h1>

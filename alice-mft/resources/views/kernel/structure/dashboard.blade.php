@@ -22,7 +22,7 @@
     <section id="main">
         @yield("header")
 
-        <section id="area">
+        <section id="area" @yield("area")>
             @yield("background")
             @yield("section")
         </section>

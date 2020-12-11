@@ -1,0 +1,116 @@
+section#area {
+
+    div.title {
+        color: #fff;
+        padding: 1em 4em;
+
+        div.top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+
+            div {
+                h1 {
+                    font-size: 2rem;
+                }
+
+                p {
+                    font-size: 1rem;
+                }
+            }
+
+            form {
+                width: 25rem;
+            }
+        }
+
+        div.options {
+            hr {
+                padding-top: 1rem;
+                border-bottom: 1px white solid;
+            }
+            form {
+                padding: 1.5rem 0;
+            }
+        }
+
+        div.interactions {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            i.button-icon {
+                position: absolute;
+            }
+            i.button-icon::before {
+                display: inline-block;
+                content: "\f054";
+                transform: rotate(270deg);
+                transition: all 0.2s ease-in-out;
+                font-size: 0.9rem;
+                cursor: pointer;
+            }
+            i.button-icon.reversed::before {
+                transform: rotate(90deg);
+                transition: all 0.2s ease-in-out;
+            }
+        }
+    }
+
+    div.data {
+        padding: 4em;
+        & > div {
+            margin-bottom: 4rem;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        div.top {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+
+            div.scheme {
+                width: calc(100% - 27rem);
+
+                div {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-around;
+                    flex-wrap: wrap;
+                    overflow: hidden;
+
+                    canvas {
+                        margin-bottom: 3rem;
+                        &:first-child {
+                            margin-top: 1rem;
+                        }
+                        &:last-child {
+                            margin-bottom: 1rem;
+                        }
+                    }
+                }
+            }
+
+            div.infos {
+                margin-left: 4rem;
+
+                table {
+                    height: 100%;
+                    min-width: 18em;
+                }
+            }
+        }
+
+        div.table,
+        div.infos {
+            table {
+                box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.4);
+            }
+        }
+    }
+
+
+}

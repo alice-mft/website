@@ -1,3 +1,5 @@
+@import "../kernel/configuration";
+
 .dataTables_wrapper {
 	display: flex;
 	flex-direction: column;
@@ -10,15 +12,20 @@
 		align-items: center;
 
 		& label {
-			color: #222;
+			color: #FFF;
 			font-size: 0.8em;
 		}
 
 		& select {
+            color: #FFF;
             background: transparent;
             margin: 0 0.2rem;
 			height: 1.2rem;
-			box-shadow: 0 0 0.15em rgba(24, 24, 24, 0.4);
+            box-shadow: 0 0 0.15em rgba(255, 255, 255, 0.5);
+
+            option {
+                color: #222;
+            }
 		}
 	}
 
@@ -30,16 +37,16 @@
 		margin-bottom: 0.4em;
 
 		label {
-			color: #222;
+			color: #FFF;
 			font-size: 0.8em;
 		}
 
 		input {
-            background: transparent;
-			box-shadow: 0 0 0.15em rgba(24, 24, 24, 0.4);
-			margin-left: 0.2rem;
+			box-shadow: 0 0 0.15em rgba(255, 255, 255, 0.5);
+			margin-left: 0.5rem;
 			height: 1.2rem;
 			padding: 0 0.3em;
+            background: transparent;
 		}
 	}
 
@@ -49,13 +56,13 @@
 		align-self: center;
 		display: flex;
 		align-items: center;
-		color: #222;
+		color: #FFF;
 		font-size: 0.8em;
 	}
 
 	& > .dataTables_paginate {
 		margin-top: 0.5em;
-		color: #222;
+		color: #FFF;
 		font-size: 0.8em;
 		display: flex;
 		flex-direction: row;
@@ -64,8 +71,7 @@
 
 		& > a {
 			cursor: pointer;
-			background: #222;
-			border: 0.1em #222 solid;
+			border: 0.1em #fff solid;
 			color: #fff;
 			transition: all 0.2s;
 			font-size: 0.8em;
@@ -75,7 +81,8 @@
 			height: 1.2rem;
 			&:hover {
 				background: transparent;
-				color: #222;
+				color: @color-yellow;
+                border-color: @color-yellow;
 				transition: all 0.2s;
 			}
 		}
@@ -85,15 +92,20 @@
 			display: flex;
 			align-items: center;
 			& > a {
-				cursor: pointer;
-				background: #222;
-				border: 0.1em #222 solid;
-				color: #fff;
-				transition: all 0.2s;
+                cursor: pointer;
+                border: 0.1em #fff solid;
+                color: #fff;
+                transition: all 0.2s;
+                font-size: 0.8em;
+                display: flex;
+                align-items: center;
+                height: 1.2rem;
+                width: 1.2rem;
 				&:hover {
-					background: transparent;
-					color: #222;
-					transition: all 0.2s;
+                    background: transparent;
+                    color: @color-yellow;
+                    border-color: @color-yellow;
+                    transition: all 0.2s;
 				}
 			}
 			& > * {

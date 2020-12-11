@@ -21,7 +21,7 @@
 @endsection
 
 @section("section")
-    <div id="foreground" style="display: flex;">
+    <div id="foreground">
         <div id="form" class="box">
             <h1>Sign Up</h1>
             <img src="{{ asset("img/svg/register.svg") }}" />

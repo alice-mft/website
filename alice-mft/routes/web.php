@@ -28,6 +28,7 @@ Route::group(["prefix" => "account"], function () {
 
 Route::group(["prefix" => "dashboard"], function () {
     Route::get("/", [Controllers\Contents\Dashboard\Main::class, "__construct"]);
+    Route::view("/ladder", "contents/dashboard/components/ladder");
 });
 
 Route::group(["prefix" => "error"], function () {

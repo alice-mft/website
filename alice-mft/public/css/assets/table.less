@@ -1,46 +1,45 @@
 @import "../kernel/configuration";
 
 table {
+    border-top: 0.3rem #222 solid;
     width: 100%;
     text-align: center;
 
-    &.datatable {
-        & > thead {
-            & th {
-                cursor: pointer;
+    &.horizontal {
+        border-top: 0;
+
+        thead tr:first-child {
+            background: #1B2631;
+            width: 100%;
+
+            th,
+            td {
+                color: #FFF;
             }
         }
     }
 
-    & tr:nth-child(even) {
-        background: #ececec;
-    }
+    &.vertical {
+        border-top: 0;
 
-    & > thead {
-        background: #1B2631;
-        width: 100%;
-        color: #fff;
-
-        & th {
-            font-size: 0.8em;
-            text-align: center;
-            border: 0.05em #1B2631 solid;
-            padding: 2em 0.4em;
+        td:first-child {
+            background: #1B2631;
+            width: 100%;
         }
     }
 
-    & > tbody {
-        margin-top: 2em;
-        background: #fff;
-        border: 1px #dae7eb solid;
-        &.clickable td {
-            cursor: pointer;
+    tr {
+        background: #FFF;
+        color: #222;
+
+        &:nth-child(even) {
+            background: #f3f3f3;
         }
 
-        & td {
+        th,
+        td {
             font-size: 0.75em;
-            color: #222;
-            padding: 1.5em 0.2em;
+            padding: 1.5em 1em;
             vertical-align: center;
         }
     }

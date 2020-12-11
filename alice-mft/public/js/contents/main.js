@@ -5,9 +5,6 @@ SetLoadingAnimation({
     options: {
         direction: "down"
     }
-}, () => {
-    var scene = document.getElementById("foreground");
-    new Parallax(scene);
 });
 
 $('#topWave').GenerateWaves({
@@ -39,4 +36,3 @@ $('#bottomWave').GenerateWaves({
     opacity: 1,
     position: 'top'
 });
-

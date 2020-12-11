@@ -14,7 +14,7 @@
                 <div class="dropdown">
                     <div class="content">
                         <div class="picture">
-                            <img src="{{ url("account") }}" />
+                            <img src="{{ asset("img/account/default.png") }}" />
                             <h2>{{ session()->get("account")->getFirstName() }}</h2>
                             @if (session()->get("account")->getType() == 2)
                                 <label class="administrator">Administrator</label>

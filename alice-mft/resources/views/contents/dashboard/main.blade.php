@@ -19,7 +19,7 @@
 @endsection
 
 @section("section")
-    <div id="foreground" style="display: flex;">
+    <div id="foreground">
         <div class="box article markdown">
             {!! $contents ?? "An error occured" !!}
         </div>

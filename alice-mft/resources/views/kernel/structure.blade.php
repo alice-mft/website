@@ -26,7 +26,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
 
-<body style="display: none;">
+<body style="display: none;" class="@yield("theme")">
 
     <!-- Loader -->
     <div id="loader">

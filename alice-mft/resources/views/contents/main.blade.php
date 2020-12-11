@@ -13,7 +13,7 @@
 @endsection
 
 @section("background")
-    <div id="background" data-height="calc(100vh - 4rem)">
+    <div id="background" class="reverse" data-height="calc(100vh - 4rem)">
         <canvas id="topWave" height="200" width="1200"></canvas>
         <span class="top" data-height="20rem"></span>
         <canvas id="bottomWave" height="200" width="1200"></canvas>
@@ -24,7 +24,7 @@
     <div id="foreground">
         <div id="title" data-depth="0.1">
             <h1>ALICE MFT</h1>
-            <p>A Large Ion Collider Experiment</p>
+            <p>A Large Ion Collider Experiment - Muon Forward Tracker</p>
             <ul>
                 <li>Management dashboard</li>
                 <li>Version 2.0.0</li>
