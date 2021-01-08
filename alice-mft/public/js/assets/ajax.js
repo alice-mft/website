@@ -1,8 +1,8 @@
 function AjaxRequest(parameters) {
     $.ajax({
         type: parameters.type,
-        url: retrieveUrl(parameters.url),
-        data: $(parameters.form).serialize(),
+        url: parameters.url, //retrieveUrl(parameters.url),
+        //data: $(parameters.form).serialize(),
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         },

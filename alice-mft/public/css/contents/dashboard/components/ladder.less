@@ -73,7 +73,7 @@ section#area {
             flex-wrap: wrap;
 
             div.scheme {
-                width: calc(100% - 27rem);
+                width: calc(100% - 28rem);
 
                 div {
                     display: flex;
@@ -96,10 +96,17 @@ section#area {
 
             div.infos {
                 margin-left: 4rem;
-
+                width: 24rem;
+                overflow: hidden;
                 table {
                     height: 100%;
-                    min-width: 18em;
+                    width: 100%;
+                    td {
+                        max-width: 2rem;
+                        a {
+                            color: #0000EE;
+                        }
+                    }
                 }
             }
         }

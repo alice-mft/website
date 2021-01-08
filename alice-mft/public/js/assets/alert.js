@@ -1,5 +1,5 @@
 function triggerAlert(content) {
-    $("div#container").prepend('<div id="alert"><div class="popup"><span class="close"></span><div class="header"><img src="../../../img/mft/banner-dark.png""></div><div class="body"><h3>' + content.title + '</h3><p>' + content.description + '</p><button class="dark">Refresh</button></div></div></div>');
+    $("div#container").prepend('<div id="alert"><div class="popup"><span class="close"></span><div class="header"><img src="../../../img/mft/banner-dark.png""></div><div class="body"><h3>' + content.title + '</h3><p>' + content.description + '</p><button class="button filled dark">Refresh</button></div></div></div>');
 
     $("div#alert").hide();
     $("div#alert").fadeIn(200, () => {

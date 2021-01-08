@@ -35,6 +35,65 @@
             //$("#background span.top").css("height", (percentage+30) + "rem");
         });*/
 
+        function retrieveProperty(data, parameters) {
+            while (parameters.includes(".")) {
+                var path = parameters.split(".")[0];
+                data = data[path];
+                parameters = parameters.substring(path.length + 1);
+            }
+
+            return data[parameters];
+        }
+
+        AjaxRequest({
+            type: "GET",
+            url: "http://localhost:8080/ladder/default?identifier=h0d0f0z0l0",
+            onSuccess: (data, status, result) => {
+                $("*[data-field]").each((i, element) => {
+                    var field = $(element).data("field");
+                    var link = $(element).data("type") === "link";
+
+                    var text = retrieveProperty(data, field);
+
+                    if (!link) {
+                        $(element).text(text);
+                    } else {
+                        $(element).attr("href", text);
+                        $(element).text("click-me !");
+                    }
+                });
+
+            },
+            onError(result, status, error) {
+                alert("ajax error");
+            }
+        });
+
+
+        AjaxRequest({
+            type: "GET",
+            url: "http://localhost:8080/ladder/chips?identifier=h0d0f0z0l0",
+            onSuccess: (data, status, result) => {
+                $("*[data-field]").each((i, element) => {
+                    var field = $(element).data("field");
+                    var link = $(element).data("type") === "link";
+
+                    var text = retrieveProperty(data, field);
+
+                    if (!link) {
+                        $(element).text(text);
+                    } else {
+                        $(element).attr("href", text);
+                        $(element).text("click-me !");
+                    }
+                });
+
+            },
+            onError(result, status, error) {
+                alert("ajax error");
+            }
+        });
+
     </script>
     <script>
         $("form").on("submit", (event) => {
@@ -123,31 +182,31 @@
                         <tbody>
                             <tr>
                                 <td>Ladder</td>
-                                <td>?</td>
+                                <td data-field="ladder.ladderId">?</td>
                             </tr>
                             <tr>
                                 <td>Production name</td>
-                                <td>?</td>
+                                <td data-field="ladder.name">?</td>
                             </tr>
                             <tr>
                                 <td>Traveller</td>
-                                <td>?</td>
+                                <td><a data-type="link" data-field="ladder.travLink" href="?">?</a></td>
                             </tr>
                             <tr>
                                 <td>Cernbox dir</td>
-                                <td>?</td>
+                                <td><a data-type="link" data-field="ladder.cernboxLink" href="?">?</a></td>
                             </tr>
                             <tr>
                                 <td>Mechanical grade</td>
-                                <td>?</td>
+                                <td data-field="ladder.mechGrade">?</td>
                             </tr>
                             <tr>
                                 <td>Qualification grade</td>
-                                <td>?</td>
+                                <td data-field="ladder.qaGrade">?</td>
                             </tr>
                             <tr>
                                 <td>FPC</td>
-                                <td>?</td>
+                                <td data-field="fpc.fpcId">?</td>
                             </tr>
                         </tbody>
                     </table>
@@ -155,7 +214,7 @@
             </div>
 
             <div class="table" id="disk">
-                <table class="datatable horizontal">
+                <table class="horizontal">
                     <thead>
                         <tr>
                             <th>Cone</th>
@@ -168,36 +227,12 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                        </tr>
-                        <tr>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                        </tr>
-                        <tr>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                        </tr>
-                        <tr>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
+                            <td data-field="disk.coneId">?</td>
+                            <td data-field="disk.diskId">?</td>
+                            <td data-field="diskFace.diskFaceId">?</td>
+                            <td data-field="zone.zoneId">?</td>
+                            <td data-field="pcb.pcbId">?</td>
+                            <td><a data-type="link" data-field="disk.docLink" href="?">?</a></td>
                         </tr>
                     </tbody>
                 </table>

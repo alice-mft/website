@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::view("/", "contents/main");
+Route::view("/test", "test");
 
 Route::group(["prefix" => "examples"], function () {
     Route::get("/basic", [Controllers\Examples\Basic::class, "__construct"]);
